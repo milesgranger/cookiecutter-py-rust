@@ -1,0 +1,10 @@
+[package]
+name = "{{ cookiecutter.package_name }}"
+version = "{{ cookiecutter.version }}"
+authors = ["{{ cookiecutter.full_name }} <{{ cookiecutter.email }}>"]
+
+[lib]
+name = "{{ cookiecutter.project_slug }}"
+crate-type = ["cdylib"]
+
+[dependencies]
