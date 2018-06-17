@@ -25,7 +25,7 @@ setup(name="{{ cookiecutter.package_name }}",
       long_description='',
       packages=['{{ cookiecutter.project_slug }}'],
       rust_extensions=[
-              RustExtension('gap_statistic.rust.gapstat', 'Cargo.toml', binding=Binding.PyO3)
+              RustExtension('{{ cookiecutter.project_slug }}.rust.example', 'Cargo.toml', binding=Binding.PyO3)
           ],
       license='BSD',
       url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.package_name }}',

@@ -8,3 +8,4 @@ name = "{{ cookiecutter.project_slug }}"
 crate-type = ["cdylib"]
 
 [dependencies]
+pyo3 = { version = "^0.2.7", features = ["extension-module"]}
