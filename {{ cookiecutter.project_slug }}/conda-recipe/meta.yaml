@@ -1,8 +1,6 @@
-{% set data = load_setup_py_data() %}
-
 package:
   name: {{ cookiecutter.package_name }}
-  version: {{ data['version'] }}
+  version: 0.0.1
 
 source:
   path: ../
@@ -16,11 +14,11 @@ build:
 
 requirements:
   build:
-    - python {{ python }}
+    - python
     - setuptools
     - pip
   run:
-    - python {{ python }}
+    - python
 
 test:
   imports:
