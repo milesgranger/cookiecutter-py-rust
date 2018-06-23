@@ -1,6 +1,8 @@
+{% set data = load_setup_py_data() %}
+
 package:
-  name: {{ cookiecutter.package_name }}
-  version: 0.0.1
+  name: {{ package_name }}
+  version: {{ data['version'] }}
 
 source:
   path: ../
@@ -8,25 +10,24 @@ source:
 build:
   number: 1
   script:
-    - pip install {{ cookiecutter.package_name }} --no-index --no-deps -f wheelhouse/ # [linux]
-    - pip install {{ cookiecutter.package_name }} --no-index --no-deps -f wheelhouse\ # [win]
+    - pip install {{ package_name }} --no-index --no-deps -f wheelhouse
 
 
 requirements:
   build:
-    - python
+    - python {{ python }}
     - setuptools
     - pip
   run:
-    - python
+    - python {{ python }}
 
 test:
   imports:
-    - {{ cookiecutter.project_slug }}
-    - {{ cookiecutter.project_slug }}.rust.example
+    - {{ project_slug }}
+    - {{ project_slug }}.rust.example
 
 
 about:
   home: http://github.com/milesgranger/gap_statistic
   license: Apache Software License
-  summary: {{ cookiecutter.project_short_description }}
+  summary: {{ project_short_description }}

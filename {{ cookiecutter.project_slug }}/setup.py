@@ -1,6 +1,6 @@
 import sys
 from setuptools import setup
-from {{ cookiecutter.project_slug }} import __version__
+from {{ cookiecutter.project_slug }}._version import __version__
 
 try:
     from setuptools_rust import RustExtension, Binding
